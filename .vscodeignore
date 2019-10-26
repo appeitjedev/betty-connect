@@ -1,0 +1,7 @@
+**/*.ts
+**/tsconfig.json
+**/.vscode
+**/*.http
+**/.src
+tsconfig.json
+tslint.json

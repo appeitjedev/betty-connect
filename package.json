@@ -1,0 +1,140 @@
+{
+  "name": "betty",
+  "displayName": "Betty Connect",
+  "description": "Betty templates editing in visual code",
+  "publisher": "appeitje",
+  "version": "0.1.6",
+  "icon": "resources/logo.png",
+  "author": {
+    "name": "Gareth Loot",
+    "email": "appeitjedev@icloud.com"
+  },
+  "galleryBanner": {
+    "color": "#E9004C",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.38.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": [
+      {
+        "title": "Betty",
+        "properties": {
+          "betty.bettyapp": {
+            "type": "string",
+            "scope": "window",
+            "description": "Betty app identifier"
+          },
+          "betty.username": {
+            "type": "string",
+            "scope": "window",
+            "description": "Betty email address"
+          },
+          "betty.apikey": {
+            "type": "string",
+            "scope": "window",
+            "description": "Betty api key"
+          }
+        }
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.connect",
+        "title": "Betty Connect"
+      },
+      {
+        "command": "extension.selectItem",
+        "title": "Betty Select"
+      },
+      {
+        "command": "extension.reload-templates",
+        "title": "Betty Reload Templates",
+        "icon": {
+          "light": "images/light/refresh.svg",
+          "dark": "images/dark/refresh.svg"
+        }
+      },
+      {
+        "command": "extension.insert-template",
+        "title": "Insert Template",
+        "icon": {
+          "light": "images/light/add.svg",
+          "dark": "images/dark/add.svg"
+        }
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "betty-templates-view",
+          "title": "Betty Templates",
+          "icon": "resources/logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "betty-templates-view": [
+        {
+          "id": "templates-view",
+          "name": "Templates",
+          "when": "workbenchState == folder"
+        },
+        {
+          "id": "models-view",
+          "name": "Models",
+          "when": "workbenchState == folder"
+        }
+      ]
+    },
+    "menus": {
+      "view/title": [
+        {
+          "command": "extension.reload-templates",
+          "when": "view == templates-view",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "extension.insert-template",
+          "when": "view == templates-view && viewItem == insert",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^10.12.21",
+    "@types/request": "^2.48.2",
+    "@types/vscode": "^1.38.0",
+    "glob": "^7.1.4",
+    "mocha": "^6.1.4",
+    "node-fetch": "^2.6.0",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.1",
+    "vscode-test": "^1.0.2"
+  },
+  "dependencies": {
+    "escape-string-regexp": "^2.0.0",
+    "json_encode": "^0.1.0",
+    "request": "^2.88.0"
+  }
+}
