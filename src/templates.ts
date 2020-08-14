@@ -28,7 +28,7 @@ export class Templates implements vscode.TreeDataProvider<Entry> {
     this.items = [];
     this.context.subscriptions.push(
       vscode.commands.registerCommand(
-        "extension.opentemplate",
+        "extension.open-bb-template",
         (doctype: string, id: string) => {
           this.openTemplateFrom(id, doctype);
         }
@@ -146,7 +146,7 @@ export class Templates implements vscode.TreeDataProvider<Entry> {
       treeItem.iconPath = vscode.ThemeIcon.File;
       treeItem.id = element.id;
       treeItem.command = {
-        command: "extension.opentemplate",
+        command: "extension.open-bb-template",
         title: "Open File",
         arguments: [element.doctype, element.id]
       };

@@ -3,8 +3,12 @@
   "displayName": "Betty Connect",
   "description": "Betty templates editing in visual code",
   "publisher": "appeitje",
-  "version": "0.1.6",
+  "version": "0.1.9",
   "icon": "resources/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https: //github.com/appeitjedev/betty-connect.git"
+  },
   "author": {
     "name": "App Eitje Dev",
     "email": "appeitjedev@icloud.com"
@@ -17,10 +21,12 @@
     "vscode": "^1.38.0"
   },
   "categories": [
-    "Other"
+    "Other",
+    "Snippets"
   ],
   "activationEvents": [
-    "*"
+    "onCommand:extension.connect",
+    "onView:templates-view"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -49,7 +55,11 @@
     "commands": [
       {
         "command": "extension.connect",
-        "title": "Betty Connect"
+        "title": "BB: Betty Connect",
+        "icon": {
+          "light": "images/light/cloud.svg",
+          "dark": "images/dark/cloud.svg"
+        }
       },
       {
         "command": "extension.selectItem",
@@ -99,6 +109,11 @@
       "view/title": [
         {
           "command": "extension.reload-templates",
+          "when": "view == templates-view",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.connect",
           "when": "view == templates-view",
           "group": "navigation"
         }

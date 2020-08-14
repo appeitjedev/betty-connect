@@ -35,7 +35,7 @@ export class TemplateEndpoint implements vscode.TreeDataProvider<Template> {
                         var docType = tempType;
                         for (let index = 0; index < items.length; index++) {
                             if (items[index]["generated_html"] === null) {
-                                const item = new Template(items[index]["description"], items[index]["id"], items[index]["description"], vscode.TreeItemCollapsibleState.None, { command: 'extension.opentemplate', title: "Execute", arguments: [docType, items[index]["description"], items[index]["id"]] });
+                                const item = new Template(items[index]["description"], items[index]["id"], items[index]["description"], vscode.TreeItemCollapsibleState.None, { command: 'extension.open-bb-template', title: "Execute", arguments: [docType, items[index]["description"], items[index]["id"]] });
                                 templates.push(item);
                             }
                         }

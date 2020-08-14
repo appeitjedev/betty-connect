@@ -2,6 +2,12 @@
 
 All notable changes to the "betty" extension will be documented in this file.
 
+## [0.1.9] - 2020-08-12
+
+### Fixes
+
+- Only activate the extension when poeple open the view or when you do Betty connect
+
 ## [0.1.6] - 2019-10-16
 
 ### Added
