@@ -1,0 +1,109 @@
+{
+  "Style option arrow function": {
+    "scope": "javascript",
+    "prefix": "bb.s.function",
+    "body": ["({ options: { $1 } }) => $1,"],
+    "description": "Style option arrow function"
+  },
+
+  "Get Color helper": {
+    "scope": "javascript",
+    "prefix": "bb.s.color",
+    "body": ["({ options: { $1 } }) => style.getColor($1),"],
+    "description": "Get Color helper"
+  },
+
+  "Get Spacing helper": {
+    "scope": "javascript",
+    "prefix": "bb.s.spacing",
+    "body": ["({ options: { $1 } }) => style.getSpacing($1),"],
+    "description": "Get Color helper"
+  },
+
+  "Get Spacing for screensize helper": {
+    "scope": "javascript",
+    "prefix": "bb.s.spacing.screen",
+    "body": [
+      "({ options: { $1 } }) => style.getSpacing($1, '${2|Mobile,Portrait,Landscape,Desktop|}'),"
+    ],
+    "description": "Get Spacing for screensize helper"
+  },
+
+  "Get font size": {
+    "scope": "javascript",
+    "prefix": "bb.s.fSize",
+    "body": ["fontSize: ({ options: { $1 } }) => style.getFontSize($1),"],
+    "description": "Get font size"
+  },
+
+  "Get font size for screen size": {
+    "scope": "javascript",
+    "prefix": "bb.s.fSize.screen",
+    "body": [
+      "fontSize: ({ options: { $1 } }) => style.getFontSize($1, '${2|Mobile,Portrait,Landscape,Desktop|}'),"
+    ],
+    "description": "Get font size for screen size"
+  },
+
+  "Get font Family": {
+    "scope": "javascript",
+    "prefix": "bb.s.fFam",
+    "body": ["fontFamily: ({ options: { $1 } }) => style.getFontFamily($1),"],
+    "description": "Get font Family"
+  },
+
+  "Get font Weight": {
+    "scope": "javascript",
+    "prefix": "bb.s.fWeight",
+    "body": ["fontWeight: ({ options: { $1 } }) => style.getFontWeight($1),"],
+    "description": "Get font Weight"
+  },
+
+  "Get textTransform": {
+    "scope": "javascript",
+    "prefix": "bb.s.tTransform",
+    "body": [
+      "textTransform: ({ options: { $1 } }) => style.getTextTransform($1),"
+    ],
+    "description": "Get textTransform"
+  },
+
+  "Get letterSpacing": {
+    "scope": "javascript",
+    "prefix": "bb.s.lSpacing",
+    "body": [
+      "letterSpacing: ({ options: { $1 } }) => style.getLetterSpacing($1),"
+    ],
+    "description": "Get letterSpacing"
+  },
+
+  "Get border size": {
+    "scope": "javascript",
+    "prefix": "bb.s.border",
+    "body": ["borderSize: ({ options: { $1 } }) => style.getBorderSize($1),"],
+    "description": "Get border size"
+  },
+
+  "Get border radius": {
+    "scope": "javascript",
+    "prefix": "bb.s.radius",
+    "body": [
+      "borderRadius: ({ options: { $1 } }) => style.getBorderRadius($1),"
+    ],
+    "description": "Get border radius"
+  },
+
+  "Get fonts helpers": {
+    "scope": "javascript",
+    "prefix": "bb.s.font",
+    "body": [
+      "color: ({ options: { $1 } }) => style.getFontColor($1),",
+      "fontSize: ({ options: { $1 } }) => style.getFontSize($1),",
+      "fontFamily: ({ options: { $1 } }) => style.getFontFamily($1),",
+      "fontWeight: ({ options: { $1 } }) => style.getFontWeight($1),",
+      "textTransform: ({ options: { $1 } }) => style.getTextTransform($1),",
+      "letterSpacing: ({ options: { $1 } }) => style.getLetterSpacing($1),"
+    ],
+    "description": "Get font helpers"
+  }
+}

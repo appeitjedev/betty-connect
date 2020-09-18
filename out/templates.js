@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TemplatesView = exports.Templates = void 0;
 const vscode = require("vscode");
 const connect_1 = require("./connect");
 const fs = require("fs");
@@ -22,7 +23,7 @@ class Templates {
         this.sync = true;
         this.connect = new connect_1.Connect();
         this.items = [];
-        this.context.subscriptions.push(vscode.commands.registerCommand("extension.opentemplate", (doctype, id) => {
+        this.context.subscriptions.push(vscode.commands.registerCommand("extension.open-bb-template", (doctype, id) => {
             this.openTemplateFrom(id, doctype);
         }));
         this.context.subscriptions.push(vscode.commands.registerCommand("extension.insert-template", temp => {
@@ -112,7 +113,7 @@ class Templates {
             treeItem.iconPath = vscode.ThemeIcon.File;
             treeItem.id = element.id;
             treeItem.command = {
-                command: "extension.opentemplate",
+                command: "extension.open-bb-template",
                 title: "Open File",
                 arguments: [element.doctype, element.id]
             };

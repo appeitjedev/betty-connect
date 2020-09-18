@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TemplateEndpoint = void 0;
 const vscode = require("vscode");
 const request = require("request");
 class TemplateEndpoint {
@@ -42,7 +43,7 @@ class TemplateEndpoint {
                             var docType = tempType;
                             for (let index = 0; index < items.length; index++) {
                                 if (items[index]["generated_html"] === null) {
-                                    const item = new Template(items[index]["description"], items[index]["id"], items[index]["description"], vscode.TreeItemCollapsibleState.None, { command: 'extension.opentemplate', title: "Execute", arguments: [docType, items[index]["description"], items[index]["id"]] });
+                                    const item = new Template(items[index]["description"], items[index]["id"], items[index]["description"], vscode.TreeItemCollapsibleState.None, { command: 'extension.open-bb-template', title: "Execute", arguments: [docType, items[index]["description"], items[index]["id"]] });
                                     templates.push(item);
                                 }
                             }

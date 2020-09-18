@@ -1,0 +1,171 @@
+{
+  "Component": {
+    "scope": "javascript",
+    "prefix": "bb.c",
+    "body": [
+      "(() => ({",
+      "  name: '$1',",
+      "  type: '${2|BODY_COMPONENT,LAYOUT_COMPONENT,CONTAINER_COMPONENT,CONTENT_COMPONENT|}',",
+      "  allowedTypes: [],",
+      "  orientation: '${3|HORIZONTAL,VERTICAL|}',",
+      "  jsx: (() => {",
+      "    const value = 'Example';",
+      "    return <div className={classes.root}>{value}</div>;",
+      "  })(),",
+      "  styles: B => theme => {",
+      "    const style = new B.Styling(theme);",
+      "    return {",
+      "      root: {},",
+      "    };",
+      "  },",
+      "}))();"
+    ],
+    "description": "Basic component"
+  },
+
+  "Betty helper deconstructor": {
+    "scope": "javascript",
+    "prefix": "bb.c.B",
+    "body": ["const { $0} = B;"],
+    "description": "Betty helper deconstructor"
+  },
+
+  "IsDev boiler plate": {
+    "scope": "javascript",
+    "prefix": "bb.c.isDev",
+    "body": ["const isDev = env === 'dev';", "$0"],
+    "description": "IsDev boiler plate"
+  },
+
+  "Is Empty boiler plate": {
+    "scope": "javascript",
+    "prefix": "bb.c.isEmpty",
+    "body": ["const isEmpty = children.length === 0;", "$0"],
+    "description": "Is Empty boiler plate"
+  },
+
+  "Link helper": {
+    "scope": "javascript",
+    "prefix": "bb.h.link",
+    "body": ["<Link endpoint={$1}>$0</Link>"],
+    "description": "Link helper"
+  },
+
+  "getProperty helper": {
+    "scope": "javascript",
+    "prefix": "bb.h.getProperty",
+    "body": ["const { kind, modelId, name } = getProperty($0);"],
+    "description": "getProperty helper"
+  },
+
+  "GetAll helper component": {
+    "scope": "javascript",
+    "prefix": "bb.h.GetAll",
+    "body": [
+      "<GetAll modelId={$1} filter={$2} skip={$3} take={$4}>",
+      "  {({ loading, error, data, refetch }) => {",
+      "    if (loading) {",
+      "      return <span>Loading...</span>;",
+      "    }",
+      "",
+      "    if (error) {",
+      "      return <span>Something went wrong: {error.message} :(</span>;",
+      "    }",
+      "",
+      "    const { totalCount, results } = data;",
+      "",
+      "    return (",
+      "      <div>",
+      "        <p>There are {totalCount} records.</p>",
+      "        <ul>",
+      "          {results.map(row => <li key={row.id}>{row.$5}</li>)}",
+      "        </ul>",
+      "      </div>",
+      "    );",
+      "  }}",
+      "</GetAll>"
+    ],
+    "description": "GetAll helper component"
+  },
+
+  "GetOne helper component": {
+    "scope": "javascript",
+    "prefix": "bb.h.GetOne",
+    "body": [
+      "<GetOne modelId={$1} filter={$2}>",
+      "  {({ loading, error, data }) => {",
+      "    if (loading) {",
+      "      return <span>Loading...</span>;",
+      "    }",
+      "",
+      "    if (error) {",
+      "      return <span>Something went wrong: {error.message} :(</span>;",
+      "    }",
+      "",
+      "    const { id } = data;",
+      "",
+      "    return (",
+      "      <div>",
+      "        <p>Fetched a record with ID: {id}.</p>",
+      "      </div>",
+      "    );",
+      "  }}",
+      "</GetOne>"
+    ],
+    "description": "GetOne helper component"
+  },
+
+  "GetMe helper component": {
+    "scope": "javascript",
+    "prefix": "bb.h.GetMe",
+    "body": [
+      "<GetMe authenticationProfileId={$1}>",
+      "  {({ loading, error, data }) => {",
+      "    if (loading) {",
+      "      return <span>Loading...</span>;",
+      "    }",
+      "",
+      "    if (error) {",
+      "      return <span>Something went wrong: {error.message} :(</span>;",
+      "    }",
+      "",
+      "    const { id } = data;",
+      "",
+      "    return <p>Fetched a record with ID: {id}.</p>;",
+      "  }}",
+      "</GetMe>"
+    ],
+    "description": "GetMe helper component"
+  },
+
+  "Action helper component": {
+    "scope": "javascript",
+    "prefix": "bb.h.Action",
+    "body": [
+      "<Action actionId={$1}>",
+      "  {(callAction, { loading, error, data }) => {",
+      "    if (loading) {",
+      "      return <span>Loading...</span>;",
+      "    }",
+      "",
+      "    if (error) {",
+      "      return <span>Something went wrong: {error.message} :(</span>;",
+      "    }",
+      "",
+      "    return (",
+      "      <button",
+      "        onClick={event => {",
+      "          callAction({",
+      "            variables: { input: { id: id } },",
+      "          });",
+      "        }}",
+      "      >",
+      "        {useText(text)}",
+      "      </button>",
+      "    );",
+      "  }}",
+      "</Action>;"
+    ],
+    "description": "Action helper component"
+  }
+}

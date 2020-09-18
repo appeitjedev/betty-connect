@@ -1,0 +1,7 @@
+{
+  "useEffect hook": {
+    "prefix": "br.useEffect",
+    "body": ["useEffect(() => {}, []);"],
+    "description": "useEffect hook"
+  }
+}

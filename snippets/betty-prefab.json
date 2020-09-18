@@ -1,0 +1,333 @@
+{
+  "Prefab": {
+    "scope": "javascript",
+    "prefix": "bb.p",
+    "body": [
+      "(() => ({",
+      "  name: '$1',",
+      "  icon: '${2|ContainerIcon,TitleIcon,ParagraphIcon,ButtonIcon,DataContainer,UnorderedListIcon|}',",
+      "  category: '${3|LAYOUT,CONTENT,DATA,TABLE,NAVIGATION,FORM|}',",
+      "  structure: [",
+      "    {",
+      "      name: '$4',",
+      "      options: [],",
+      "      descendants: [],",
+      "    },",
+      "  ],",
+      "}))();"
+    ],
+    "description": "Component prefab"
+  },
+  "Component Configuration": {
+    "scope": "javascript",
+    "prefix": "bb.p.conf",
+    "body": [
+      "{",
+      "  name: '$1',",
+      "  options: [],",
+      "  descendants: [],",
+      "},"
+    ],
+    "description": "Component configuration"
+  },
+
+  "Text Option": {
+    "scope": "javascript",
+    "prefix": "bb.o.text",
+    "body": [
+      "{",
+      "  type: 'TEXT',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '$3'",
+      "},"
+    ],
+    "description": "Text option uitleg"
+  },
+
+  "Multiline Text Option": {
+    "prefix": "bb.o.multitext",
+    "body": [
+      "{",
+      "  type: 'TEXT',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '$3',",
+      "  configuration: {",
+      "    as: 'MULTILINE'",
+      "  }",
+      "},"
+    ],
+    "description": "Multiline Text Option"
+  },
+
+  "Number option": {
+    "scope": "javascript",
+    "prefix": "bb.o.number",
+    "body": [
+      "{",
+      "  type: 'NUMBER',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: $3",
+      "},"
+    ],
+    "description": "Number option"
+  },
+
+  "Toggle option": {
+    "scope": "javascript",
+    "prefix": "bb.o.toggle",
+    "body": [
+      "{",
+      "  type: 'TOGGLE',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: ${3|true,false|}",
+      "},"
+    ],
+    "description": "Toggle option"
+  },
+
+  "Color option": {
+    "scope": "javascript",
+    "prefix": "bb.o.color",
+    "body": [
+      "{",
+      "  type: 'COLOR',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '${3|White,Light,Medium,Dark,Black,Primary,Secondary,Success,Info,Warning,Danger,Accent1,Accent2,Accent3|}'",
+      "},"
+    ],
+    "description": "Color option"
+  },
+
+  "Font option": {
+    "scope": "javascript",
+    "prefix": "bb.o.font",
+    "body": [
+      "{",
+      "  type: 'FONT',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '${3|Title1,Title2,Title3,Title4,Title5,Title6,Body1,Body2|}'",
+      "},"
+    ],
+    "description": "Font option"
+  },
+
+  "Size option": {
+    "scope": "javascript",
+    "prefix": "bb.o.size",
+    "body": [
+      "{",
+      "  type: 'SIZE',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '${3|S,M,L,XL|}'",
+      "}"
+    ],
+    "description": "Size option"
+  },
+
+  "Sizes option": {
+    "scope": "javascript",
+    "prefix": "bb.o.sizes",
+    "body": [
+      "{",
+      "  type: 'SIZES',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: ['${3|S,M,L,XL|}', '${3|S,M,L,XL|}', '${3|S,M,L,XL|}', '${3|S,M,L,XL|}']",
+      "}"
+    ],
+    "description": "Sizes option"
+  },
+
+  "Unit option": {
+    "scope": "javascript",
+    "prefix": "bb.o.unit",
+    "body": [
+      "{",
+      "  type: 'SIZE',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '$3',",
+      "  configuration: {",
+      "    as: 'UNIT'",
+      "  }",
+      "}"
+    ],
+    "description": "Unit option"
+  },
+
+  "Endpoint option": {
+    "scope": "javascript",
+    "prefix": "bb.o.endpoint",
+    "body": [
+      "{",
+      "  type: 'ENDPOINT',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '$0'",
+      "}"
+    ],
+    "description": "Endpoint option"
+  },
+
+  "Model option": {
+    "scope": "javascript",
+    "prefix": "bb.o.model",
+    "body": [
+      "{",
+      "  type: 'MODEL',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '$0'",
+      "}"
+    ],
+    "description": "Model option"
+  },
+
+  "Property option": {
+    "scope": "javascript",
+    "prefix": "bb.o.property",
+    "body": [
+      "{",
+      "  type: 'PROPERTY',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '$3',",
+      "  configuration: {",
+      "    dependsOn: '$0'",
+      "  }",
+      "}"
+    ],
+    "description": "Property option"
+  },
+
+  "Filter option": {
+    "scope": "javascript",
+    "prefix": "bb.o.filter",
+    "body": [
+      "{",
+      "  type: 'FILTER',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: {},",
+      "  configuration: {",
+      "    dependsOn: '$0'",
+      "  }",
+      "}"
+    ],
+    "description": "Filter option"
+  },
+
+  "Variable option": {
+    "scope": "javascript",
+    "prefix": "bb.o.variable",
+    "body": [
+      "{",
+      "  type: 'VARIABLE',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: ['$3'],",
+      "  configuration: {",
+      "    dependsOn: '$0'",
+      "  }",
+      "}"
+    ],
+    "description": "Variable option"
+  },
+
+  "Action option": {
+    "scope": "javascript",
+    "prefix": "bb.o.action",
+    "body": [
+      "{",
+      "  type: 'ACTION',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '',",
+      "}"
+    ],
+    "description": "Action option"
+  },
+
+  "Action v1 option": {
+    "scope": "javascript",
+    "prefix": "bb.o.actionv1",
+    "body": [
+      "{",
+      "  type: 'ACTION',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '',",
+      "  configuration: {",
+      "    apiVersion: 'v1',",
+      "  },",
+      "}"
+    ],
+    "description": "Action v1 option"
+  },
+
+  "Action input option": {
+    "scope": "javascript",
+    "prefix": "bb.o.input",
+    "body": [
+      "{",
+      "  type: 'ACTION_INPUT',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '',",
+      "}"
+    ],
+    "description": "Action input option"
+  },
+
+  "Custom option": {
+    "scope": "javascript",
+    "prefix": "bb.o.custom",
+    "body": [
+      "{",
+      "  type: 'CUSTOM',",
+      "  label: '$1',",
+      "  key: '$2',",
+      "  value: '$3',",
+      "  configuration: {",
+      "    as: '${4|DROPDOWN,BUTTONGROUP|}',",
+      "    dataType: 'string',",
+      "    allowedInput: [",
+      "      {",
+      "        name: '$5',",
+      "        value: '$6'",
+      "      }",
+      "    ]",
+      "  }",
+      "}"
+    ],
+    "description": "Dropdown option"
+  },
+
+  "Custom value": {
+    "scope": "javascript",
+    "prefix": "bb.o.custom.value",
+    "body": ["{", "  name: '$1',", "  value: '$2'", "}$0"],
+    "description": "Custom value"
+  },
+
+  "Option condition": {
+    "scope": "javascript",
+    "prefix": "bb.o.condition",
+    "body": [
+      "condition: {",
+      "  type: '${1|SHOW,HIDE|}',",
+      "  option: '$2',",
+      "  comparator: 'EQ',",
+      "  value: '$3',",
+      "},"
+    ],
+    "description": "Option condition"
+  }
+}

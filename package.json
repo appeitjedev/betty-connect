@@ -3,7 +3,7 @@
   "displayName": "Betty Connect",
   "description": "Betty templates editing in visual code",
   "publisher": "appeitje",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "icon": "resources/logo.png",
   "repository": {
     "type": "git",
@@ -30,6 +30,28 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/react.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/betty-component.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/betty-enums.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/betty-prefab.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/betty-style-helpers.json"
+      }
+    ],
     "configuration": [
       {
         "title": "Betty",

@@ -1,0 +1,28 @@
+{
+  "Allowed types": {
+    "scope": "javascript",
+    "prefix": "bb.type",
+    "body": [
+      "'${1|BODY_COMPONENT,LAYOUT_COMPONENT,CONTAINER_COMPONENT,CONTENT_COMPONENT|}'"
+    ],
+    "description": "Allowed types convention"
+  },
+
+  "Theme colors": {
+    "scope": "javascript",
+    "prefix": "bb.colors",
+    "body": [
+      "'${1|White,Light,Medium,Dark,Black,Primary,Secondary,Success,Info,Warning,Danger,Accent1,Accent2,Accent3|}'"
+    ],
+    "description": "Theme colors"
+  },
+
+  "Helpers enum": {
+    "scope": "javascript",
+    "prefix": "bb.c.helpers",
+    "body": [
+      "'${1|env,Link,getVariable,getProperty,GetAll,useGetAll,GetMe,GetOne,Property,useProperty,Text,useText,Action,useAction,getActionInput,Children,useEndpoint,useFilter,useFileUpload|}'"
+    ],
+    "description": "Helpers enum"
+  }
+}

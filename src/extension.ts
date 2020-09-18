@@ -4,14 +4,11 @@ import * as vscode from "vscode";
 import { TemplatesView } from "./templates";
 import { ModelsView } from "./models";
 
-import { CLI } from "./cli";
-
 // this method is called when your extension is activated.
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
   var templatesView: TemplatesView;
   var modelsView: ModelsView;
-  var cli = new CLI();
 
   if (vscode.workspace.workspaceFolders) {
     var bettyapp = String(
