@@ -1,7 +1,6 @@
 {
   "Prefab": {
-    "scope": "javascript",
-    "prefix": "bb.p",
+    "prefix": "bp",
     "body": [
       "(() => ({",
       "  name: '$1',",
@@ -16,11 +15,10 @@
       "  ],",
       "}))();"
     ],
-    "description": "Component prefab"
+    "description": "Prefab"
   },
   "Component Configuration": {
-    "scope": "javascript",
-    "prefix": "bb.p.conf",
+    "prefix": "bpcc",
     "body": [
       "{",
       "  name: '$1',",
@@ -28,12 +26,11 @@
       "  descendants: [],",
       "},"
     ],
-    "description": "Component configuration"
+    "description": "Component Configuration"
   },
 
   "Text Option": {
-    "scope": "javascript",
-    "prefix": "bb.o.text",
+    "prefix": "bpoText",
     "body": [
       "{",
       "  type: 'TEXT',",
@@ -42,11 +39,11 @@
       "  value: '$3'",
       "},"
     ],
-    "description": "Text option uitleg"
+    "description": "Text option"
   },
 
   "Multiline Text Option": {
-    "prefix": "bb.o.multitext",
+    "prefix": "bpoMultitext",
     "body": [
       "{",
       "  type: 'TEXT',",
@@ -62,8 +59,7 @@
   },
 
   "Number option": {
-    "scope": "javascript",
-    "prefix": "bb.o.number",
+    "prefix": "bpoNumber",
     "body": [
       "{",
       "  type: 'NUMBER',",
@@ -76,8 +72,7 @@
   },
 
   "Toggle option": {
-    "scope": "javascript",
-    "prefix": "bb.o.toggle",
+    "prefix": "bpoToggle",
     "body": [
       "{",
       "  type: 'TOGGLE',",
@@ -90,8 +85,7 @@
   },
 
   "Color option": {
-    "scope": "javascript",
-    "prefix": "bb.o.color",
+    "prefix": "bpoColor",
     "body": [
       "{",
       "  type: 'COLOR',",
@@ -104,8 +98,7 @@
   },
 
   "Font option": {
-    "scope": "javascript",
-    "prefix": "bb.o.font",
+    "prefix": "bpoFont",
     "body": [
       "{",
       "  type: 'FONT',",
@@ -118,8 +111,7 @@
   },
 
   "Size option": {
-    "scope": "javascript",
-    "prefix": "bb.o.size",
+    "prefix": "bpoSize",
     "body": [
       "{",
       "  type: 'SIZE',",
@@ -132,8 +124,7 @@
   },
 
   "Sizes option": {
-    "scope": "javascript",
-    "prefix": "bb.o.sizes",
+    "prefix": "bpoSizes",
     "body": [
       "{",
       "  type: 'SIZES',",
@@ -146,8 +137,7 @@
   },
 
   "Unit option": {
-    "scope": "javascript",
-    "prefix": "bb.o.unit",
+    "prefix": "bpoUnit",
     "body": [
       "{",
       "  type: 'SIZE',",
@@ -163,8 +153,7 @@
   },
 
   "Endpoint option": {
-    "scope": "javascript",
-    "prefix": "bb.o.endpoint",
+    "prefix": "bpoEndpoint",
     "body": [
       "{",
       "  type: 'ENDPOINT',",
@@ -177,8 +166,7 @@
   },
 
   "Model option": {
-    "scope": "javascript",
-    "prefix": "bb.o.model",
+    "prefix": "bpoModel",
     "body": [
       "{",
       "  type: 'MODEL',",
@@ -191,8 +179,7 @@
   },
 
   "Property option": {
-    "scope": "javascript",
-    "prefix": "bb.o.property",
+    "prefix": "bpoProperty",
     "body": [
       "{",
       "  type: 'PROPERTY',",
@@ -208,8 +195,7 @@
   },
 
   "Filter option": {
-    "scope": "javascript",
-    "prefix": "bb.o.filter",
+    "prefix": "bpoFilter",
     "body": [
       "{",
       "  type: 'FILTER',",
@@ -225,8 +211,7 @@
   },
 
   "Variable option": {
-    "scope": "javascript",
-    "prefix": "bb.o.variable",
+    "prefix": "bpoVariable",
     "body": [
       "{",
       "  type: 'VARIABLE',",
@@ -242,8 +227,7 @@
   },
 
   "Action option": {
-    "scope": "javascript",
-    "prefix": "bb.o.action",
+    "prefix": "bpoAction",
     "body": [
       "{",
       "  type: 'ACTION',",
@@ -256,8 +240,7 @@
   },
 
   "Action v1 option": {
-    "scope": "javascript",
-    "prefix": "bb.o.actionv1",
+    "prefix": "bpoActionv1",
     "body": [
       "{",
       "  type: 'ACTION',",
@@ -273,8 +256,7 @@
   },
 
   "Action input option": {
-    "scope": "javascript",
-    "prefix": "bb.o.input",
+    "prefix": "bpoInput",
     "body": [
       "{",
       "  type: 'ACTION_INPUT',",
@@ -287,8 +269,7 @@
   },
 
   "Custom option": {
-    "scope": "javascript",
-    "prefix": "bb.o.custom",
+    "prefix": "bpoCustom",
     "body": [
       "{",
       "  type: 'CUSTOM',",
@@ -311,15 +292,19 @@
   },
 
   "Custom value": {
-    "scope": "javascript",
-    "prefix": "bb.o.custom.value",
+    "prefix": "bpoCustomValue",
     "body": ["{", "  name: '$1',", "  value: '$2'", "}$0"],
     "description": "Custom value"
   },
 
-  "Option condition": {
-    "scope": "javascript",
-    "prefix": "bb.o.condition",
+  "Option Configuration": {
+    "prefix": "bpoConf",
+    "body": ["configuration: {$0},"],
+    "description": "Option Configuration"
+  },
+
+  "Configuration condition": {
+    "prefix": "bpoConfCondition",
     "body": [
       "condition: {",
       "  type: '${1|SHOW,HIDE|}',",
@@ -328,6 +313,6 @@
       "  value: '$3',",
       "},"
     ],
-    "description": "Option condition"
+    "description": "Configuration condition"
   }
 }

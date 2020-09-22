@@ -1,7 +1,6 @@
 {
   "Component": {
-    "scope": "javascript",
-    "prefix": "bb.c",
+    "prefix": "bc",
     "body": [
       "(() => ({",
       "  name: '$1',",
@@ -20,47 +19,50 @@
       "  },",
       "}))();"
     ],
-    "description": "Basic component"
+    "description": "Component"
   },
 
-  "Betty helper deconstructor": {
+  "Allowed types": {
     "scope": "javascript",
-    "prefix": "bb.c.B",
+    "prefix": "bcType",
+    "body": [
+      "'${1|BODY_COMPONENT,LAYOUT_COMPONENT,CONTAINER_COMPONENT,CONTENT_COMPONENT|}'"
+    ],
+    "description": "Allowed types convention"
+  },
+
+  "B Deconstructor": {
+    "prefix": "bcB",
     "body": ["const { $0} = B;"],
-    "description": "Betty helper deconstructor"
+    "description": "B Deconstructor"
   },
 
-  "IsDev boiler plate": {
-    "scope": "javascript",
-    "prefix": "bb.c.isDev",
+  "isDev": {
+    "prefix": "bcisDev",
     "body": ["const isDev = env === 'dev';", "$0"],
-    "description": "IsDev boiler plate"
+    "description": "isDev"
   },
 
-  "Is Empty boiler plate": {
-    "scope": "javascript",
-    "prefix": "bb.c.isEmpty",
+  "isEmpty": {
+    "prefix": "bcisEmpty",
     "body": ["const isEmpty = children.length === 0;", "$0"],
-    "description": "Is Empty boiler plate"
+    "description": "isEmpty"
   },
 
-  "Link helper": {
-    "scope": "javascript",
-    "prefix": "bb.h.link",
+  "B.Link": {
+    "prefix": "bchLink",
     "body": ["<Link endpoint={$1}>$0</Link>"],
-    "description": "Link helper"
+    "description": "B.Link"
   },
 
-  "getProperty helper": {
-    "scope": "javascript",
-    "prefix": "bb.h.getProperty",
+  "B.getProperty": {
+    "prefix": "bchgetProperty",
     "body": ["const { kind, modelId, name } = getProperty($0);"],
-    "description": "getProperty helper"
+    "description": "B.getProperty"
   },
 
-  "GetAll helper component": {
-    "scope": "javascript",
-    "prefix": "bb.h.GetAll",
+  "B.GetAll": {
+    "prefix": "bchGetAll",
     "body": [
       "<GetAll modelId={$1} filter={$2} skip={$3} take={$4}>",
       "  {({ loading, error, data, refetch }) => {",
@@ -85,12 +87,11 @@
       "  }}",
       "</GetAll>"
     ],
-    "description": "GetAll helper component"
+    "description": "B.GetAll"
   },
 
-  "GetOne helper component": {
-    "scope": "javascript",
-    "prefix": "bb.h.GetOne",
+  "B.GetOne": {
+    "prefix": "bchGetOne",
     "body": [
       "<GetOne modelId={$1} filter={$2}>",
       "  {({ loading, error, data }) => {",
@@ -112,12 +113,11 @@
       "  }}",
       "</GetOne>"
     ],
-    "description": "GetOne helper component"
+    "description": "B.GetOne"
   },
 
-  "GetMe helper component": {
-    "scope": "javascript",
-    "prefix": "bb.h.GetMe",
+  "B.GetMe": {
+    "prefix": "bchGetMe",
     "body": [
       "<GetMe authenticationProfileId={$1}>",
       "  {({ loading, error, data }) => {",
@@ -135,12 +135,11 @@
       "  }}",
       "</GetMe>"
     ],
-    "description": "GetMe helper component"
+    "description": "B.GetMe"
   },
 
-  "Action helper component": {
-    "scope": "javascript",
-    "prefix": "bb.h.Action",
+  "B.Action": {
+    "prefix": "bchAction",
     "body": [
       "<Action actionId={$1}>",
       "  {(callAction, { loading, error, data }) => {",
@@ -166,6 +165,6 @@
       "  }}",
       "</Action>;"
     ],
-    "description": "Action helper component"
+    "description": "B.Action"
   }
 }
