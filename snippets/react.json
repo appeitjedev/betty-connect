@@ -1,7 +1,12 @@
 {
   "useEffect hook": {
-    "prefix": "br.useEffect",
-    "body": ["useEffect(() => {}, []);"],
+    "prefix": "buseEffect",
+    "body": ["useEffect(() => {$}, [$1]);"],
     "description": "useEffect hook"
+  },
+  "useState hook": {
+    "prefix": "buseState",
+    "body": ["const [$1, set$2] = useState($);"],
+    "description": "useState hook"
   }
 }
