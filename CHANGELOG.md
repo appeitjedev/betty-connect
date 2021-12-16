@@ -2,7 +2,13 @@
 
 All notable changes to the "betty" extension will be documented in this file.
 
-## [0.2.1] - 2019-10-16
+## [0.2.2] - 2020-10-16
+
+### Fixed
+
+- Snippets some coma placement for snippets
+
+## [0.2.1] - 2020-10-16
 
 ### Added
 
@@ -12,7 +18,7 @@ All notable changes to the "betty" extension will be documented in this file.
 
 ### Fixes
 
-- Only activate the extension when poeple open the view or when you do Betty connect
+- Only activate the extension when people open the view or when you do Betty connect
 
 ## [0.1.6] - 2019-10-16
 

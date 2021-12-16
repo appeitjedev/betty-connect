@@ -36,7 +36,7 @@
       "  type: 'TEXT',",
       "  label: '$1',",
       "  key: '$2',",
-      "  value: '$3'",
+      "  value: '$3,'",
       "},"
     ],
     "description": "Text option"
@@ -52,7 +52,7 @@
       "  value: '$3',",
       "  configuration: {",
       "    as: 'MULTILINE'",
-      "  }",
+      "  },",
       "},"
     ],
     "description": "Multiline Text Option"
@@ -65,7 +65,7 @@
       "  type: 'NUMBER',",
       "  label: '$1',",
       "  key: '$2',",
-      "  value: $3",
+      "  value: $3,",
       "},"
     ],
     "description": "Number option"
@@ -78,7 +78,7 @@
       "  type: 'TOGGLE',",
       "  label: '$1',",
       "  key: '$2',",
-      "  value: ${3|true,false|}",
+      "  value: ${3|true,false|},",
       "},"
     ],
     "description": "Toggle option"
@@ -91,7 +91,7 @@
       "  type: 'COLOR',",
       "  label: '$1',",
       "  key: '$2',",
-      "  value: '${3|White,Light,Medium,Dark,Black,Primary,Secondary,Success,Info,Warning,Danger,Accent1,Accent2,Accent3|}'",
+      "  value: '${3|White,Light,Medium,Dark,Black,Primary,Secondary,Success,Info,Warning,Danger,Accent1,Accent2,Accent3|}',",
       "},"
     ],
     "description": "Color option"
@@ -104,7 +104,7 @@
       "  type: 'FONT',",
       "  label: '$1',",
       "  key: '$2',",
-      "  value: '${3|Title1,Title2,Title3,Title4,Title5,Title6,Body1,Body2|}'",
+      "  value: '${3|Title1,Title2,Title3,Title4,Title5,Title6,Body1,Body2|}',",
       "},"
     ],
     "description": "Font option"
@@ -117,7 +117,7 @@
       "  type: 'SIZE',",
       "  label: '$1',",
       "  key: '$2',",
-      "  value: '${3|S,M,L,XL|}'",
+      "  value: '${3|S,M,L,XL|},'",
       "}"
     ],
     "description": "Size option"
@@ -130,7 +130,7 @@
       "  type: 'SIZES',",
       "  label: '$1',",
       "  key: '$2',",
-      "  value: ['${3|S,M,L,XL|}', '${3|S,M,L,XL|}', '${3|S,M,L,XL|}', '${3|S,M,L,XL|}']",
+      "  value: ['${3|S,M,L,XL|}', '${3|S,M,L,XL|}', '${3|S,M,L,XL|}', '${3|S,M,L,XL|}'],",
       "}"
     ],
     "description": "Sizes option"
@@ -145,9 +145,9 @@
       "  key: '$2',",
       "  value: '$3',",
       "  configuration: {",
-      "    as: 'UNIT'",
-      "  }",
-      "}"
+      "    as: 'UNIT',",
+      "  },",
+      "},"
     ],
     "description": "Unit option"
   },
@@ -159,8 +159,8 @@
       "  type: 'ENDPOINT',",
       "  label: '$1',",
       "  key: '$2',",
-      "  value: '$0'",
-      "}"
+      "  value: '$0',",
+      "},"
     ],
     "description": "Endpoint option"
   },
@@ -172,8 +172,8 @@
       "  type: 'MODEL',",
       "  label: '$1',",
       "  key: '$2',",
-      "  value: '$0'",
-      "}"
+      "  value: '$0',",
+      "},"
     ],
     "description": "Model option"
   },
@@ -187,9 +187,9 @@
       "  key: '$2',",
       "  value: '$3',",
       "  configuration: {",
-      "    dependsOn: '$0'",
-      "  }",
-      "}"
+      "    dependsOn: '$0',",
+      "  },",
+      "},"
     ],
     "description": "Property option"
   },
@@ -203,9 +203,9 @@
       "  key: '$2',",
       "  value: {},",
       "  configuration: {",
-      "    dependsOn: '$0'",
-      "  }",
-      "}"
+      "    dependsOn: '$0',",
+      "  },",
+      "},"
     ],
     "description": "Filter option"
   },
@@ -219,9 +219,9 @@
       "  key: '$2',",
       "  value: ['$3'],",
       "  configuration: {",
-      "    dependsOn: '$0'",
-      "  }",
-      "}"
+      "    dependsOn: '$0',",
+      "  },",
+      "},"
     ],
     "description": "Variable option"
   },
@@ -234,7 +234,7 @@
       "  label: '$1',",
       "  key: '$2',",
       "  value: '',",
-      "}"
+      "},"
     ],
     "description": "Action option"
   },
@@ -250,7 +250,7 @@
       "  configuration: {",
       "    apiVersion: 'v1',",
       "  },",
-      "}"
+      "},"
     ],
     "description": "Action v1 option"
   },
@@ -282,18 +282,18 @@
       "    allowedInput: [",
       "      {",
       "        name: '$5',",
-      "        value: '$6'",
-      "      }",
-      "    ]",
-      "  }",
-      "}"
+      "        value: '$6',",
+      "      },",
+      "    ],",
+      "  },",
+      "},"
     ],
     "description": "Dropdown option"
   },
 
   "Custom value": {
     "prefix": "bpoCustomValue",
-    "body": ["{", "  name: '$1',", "  value: '$2'", "}$0"],
+    "body": ["{", "  name: '$1',", "  value: '$2'", "},$0"],
     "description": "Custom value"
   },
 
