@@ -2,6 +2,12 @@
 
 All notable changes to the "betty" extension will be documented in this file.
 
+## [0.2.4] - 2021-12-18
+
+### Added
+
+- Better error feedback. For example if there is a liquid error than the extension wil not safe to Betty. Now you wil see this error.
+
 ## [0.2.2] - 2020-10-16
 
 ### Fixed
