@@ -8,6 +8,7 @@ Betty Connect makes template editing possible directly in Visual code. It will a
 
 ## Features
 
+- NEW - Use .liquid as extension to support liquid formaters.
 - NEW - Code snippets for page builder custom components.
 - NEW - Connect button so you do not have to use the Command pallet
 - Model Browser to have a quick overview of all your property names and relations.

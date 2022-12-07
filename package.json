@@ -3,7 +3,7 @@
   "displayName": "Betty Connect",
   "description": "Betty templates editing and snippets in visual code",
   "publisher": "appeitje",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "icon": "resources/logo.png",
   "repository": {
     "type": "git",

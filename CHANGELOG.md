@@ -2,6 +2,12 @@
 
 All notable changes to the "betty" extension will be documented in this file.
 
+## [0.2.4] - 2022-12-07
+
+### Added
+
+- Changed .html to .liquid to support liquid formaters
+
 ## [0.2.4] - 2021-12-18
 
 ### Added
