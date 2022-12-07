@@ -12,11 +12,10 @@ interface Entry {
 }
 
 export class Templates implements vscode.TreeDataProvider<Entry> {
-  private _onDidChangeTreeData: vscode.EventEmitter<
-    Entry | undefined
-  > = new vscode.EventEmitter<Entry | undefined>();
-  readonly onDidChangeTreeData: vscode.Event<Entry | undefined> = this
-    ._onDidChangeTreeData.event;
+  private _onDidChangeTreeData: vscode.EventEmitter<Entry | undefined> =
+    new vscode.EventEmitter<Entry | undefined>();
+  readonly onDidChangeTreeData: vscode.Event<Entry | undefined> =
+    this._onDidChangeTreeData.event;
 
   public templates?: any;
   public items?: any;
@@ -35,7 +34,7 @@ export class Templates implements vscode.TreeDataProvider<Entry> {
       )
     );
     this.context.subscriptions.push(
-      vscode.commands.registerCommand("extension.insert-template", temp => {
+      vscode.commands.registerCommand("extension.insert-template", (temp) => {
         if (vscode.window.activeTextEditor) {
           const editor = vscode.window.activeTextEditor;
 
@@ -67,7 +66,7 @@ export class Templates implements vscode.TreeDataProvider<Entry> {
     );
 
     this.context.subscriptions.push(
-      vscode.workspace.onDidSaveTextDocument(e => {
+      vscode.workspace.onDidSaveTextDocument((e) => {
         let basename = path
           .basename(e.uri.path)
           .split(".")
@@ -76,8 +75,8 @@ export class Templates implements vscode.TreeDataProvider<Entry> {
         var html = fs.readFileSync(e.uri.path, "UTF-8");
         var postdata = {
           record: {
-            html: html
-          }
+            html: html,
+          },
         };
         this.connect.putRequest(
           "api/templates/" + basename,
@@ -93,16 +92,16 @@ export class Templates implements vscode.TreeDataProvider<Entry> {
       this.sync = false;
     }
     const templates = this.templates;
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
       if (element) {
-        const items = templates.map(function(val: any) {
+        const items = templates.map(function (val: any) {
           if (val["kind"] === element.name) {
             const temp: Entry = {
               name: val["description"],
               id: val["id"],
               parent: val["kind"],
               type: "template",
-              doctype: val["kind"]
+              doctype: val["kind"],
             };
             return temp;
           }
@@ -115,14 +114,14 @@ export class Templates implements vscode.TreeDataProvider<Entry> {
       }
 
       if (templates) {
-        var kindslist = templates.map(function(val: any) {
+        var kindslist = templates.map(function (val: any) {
           return val["kind"];
         });
         var kindslistUnique = kindslist.filter(onlyUnique);
-        const folders = kindslistUnique.map(function(val: any) {
+        const folders = kindslistUnique.map(function (val: any) {
           const item: Entry = {
             type: "folder",
-            name: val
+            name: val,
           };
           return item;
         });
@@ -148,7 +147,7 @@ export class Templates implements vscode.TreeDataProvider<Entry> {
       treeItem.command = {
         command: "extension.open-bb-template",
         title: "Open File",
-        arguments: [element.doctype, element.id]
+        arguments: [element.doctype, element.id],
       };
       if (
         element.parent === "partial" ||
@@ -199,22 +198,22 @@ export class Templates implements vscode.TreeDataProvider<Entry> {
         fextension = "css";
         break;
       case "partial":
-        fextension = "html";
+        fextension = "liquid";
         break;
       case "endpoint":
-        fextension = "html";
+        fextension = "liquid";
         break;
       case "javascript":
         fextension = "js";
         break;
       case "mail":
-        fextension = "html";
+        fextension = "liquid";
         break;
       case "pdf":
-        fextension = "html";
+        fextension = "liquid";
         break;
       case "soap":
-        fextension = "tmp";
+        fextension = "liquid";
         break;
       default:
         break;
@@ -235,7 +234,7 @@ export class Templates implements vscode.TreeDataProvider<Entry> {
       console.error(err);
     }
     let fpath = vscode.Uri.file(file_path);
-    vscode.workspace.openTextDocument(fpath).then(document => {
+    vscode.workspace.openTextDocument(fpath).then((document) => {
       vscode.window.showTextDocument(document, { preview: false });
     });
   }
@@ -256,11 +255,11 @@ export class TemplatesView {
     this.templates = new Templates(this.context);
     // vscode.window.registerTreeDataProvider('templates-view', templates);
     this.templatesView = vscode.window.createTreeView("templates-view", {
-      treeDataProvider: this.templates
+      treeDataProvider: this.templates,
     });
 
     this.context.subscriptions.push(
-      vscode.window.onDidChangeActiveTextEditor(e => {
+      vscode.window.onDidChangeActiveTextEditor((e) => {
         let basename = path
           .basename(e!.document.uri.path)
           .split(".")
